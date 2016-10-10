@@ -12,10 +12,10 @@ let refObj = new Referral('http://www.google.co.uk/?q=bbc+news');
 
 ```json
 {
-  type: 'search',
-  name: 'Google',
-  search: 'bbc news',
-  host: 'www.google.co.uk' 
+  "type": "search",
+  "name": "Google",
+  "search": "bbc news",
+  "host": "www.google.co.uk" 
 }
 ```
 
