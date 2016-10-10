@@ -1,6 +1,5 @@
 ----------
 Referral Parser
-=======
 ---------
 
 Parse a referral url into useful information
