@@ -92,7 +92,7 @@ Referer.prototype.searcher = function(data) {
 		}	
 
 		//now try for a custom tld and sld
-		const domains = ['.com', '.co.uk', '.co.jp', '.co.kr', '.co.nf'];
+		const domains = ['.com', '.co.uk', '.co.jp', '.co.kr', '.co.nf', '.co.id'];
 		let withoutTLD;
 
 		for (let medium in referrers) {
