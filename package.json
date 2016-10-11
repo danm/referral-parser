@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/daniel-morrison/referral-parser.git"
+    "url": "git+https://github.com/danm/referral-parser.git"
   },
   "keywords": [
     "analyitcs",
@@ -16,12 +16,12 @@
     "referrer",
     "referer"
   ],
-  "author": "Daniel Morrison <hi@danielmorrison.io>",
+  "author": "Daniel Morrison <daniel.morrison@mac.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/daniel-morrison/referral-parser/issues"
+    "url": "https://github.com/danm/referral-parser/issues"
   },
-  "homepage": "https://github.com/daniel-morrison/referral-parser#readme",
+  "homepage": "https://github.com/danm/referral-parser#readme",
   "dependencies": {
     "js-yaml": "^3.6.1",
     "request": "^2.75.0",
