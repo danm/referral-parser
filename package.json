@@ -1,35 +1,35 @@
 {
-    "name": "referral-parser",
-    "version": "0.0.4",
-    "description": "Parse a referral url into useful information",
-    "main": "index.js",
-    "scripts": {
-        "test": "mocha",
-        "bump": "npm version patch -m 'version bump' && git push && npm publish"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/danm/referral-parser.git"
-    },
-    "keywords": [
-        "analyitcs",
-        "logs",
-        "referrer",
-        "referer"
-    ],
-    "author": "Daniel Morrison <daniel.morrison@mac.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/danm/referral-parser/issues"
-    },
-    "homepage": "https://github.com/danm/referral-parser#readme",
-    "dependencies": {
-        "js-yaml": "^3.6.1",
-        "request": "^2.75.0",
-        "url": "^0.11.0"
-    },
-    "devDependencies": {
-        "chai": "^3.5.0",
-        "mocha": "^3.1.1"
-    }
+  "name": "referral-parser",
+  "version": "0.0.5",
+  "description": "Parse a referral url into useful information",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "bump": "npm version patch -m 'version bump' && git push && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danm/referral-parser.git"
+  },
+  "keywords": [
+    "analyitcs",
+    "logs",
+    "referrer",
+    "referer"
+  ],
+  "author": "Daniel Morrison <daniel.morrison@mac.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danm/referral-parser/issues"
+  },
+  "homepage": "https://github.com/danm/referral-parser#readme",
+  "dependencies": {
+    "js-yaml": "^3.6.1",
+    "request": "^2.75.0",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.1"
+  }
 }
