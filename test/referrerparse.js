@@ -248,4 +248,4 @@ describe("BBC", function() {
         expect(obj.refferal.name).to.eql('news');
     });
 
-})
+});
