@@ -167,3 +167,85 @@ describe("Top level domains", function() {
 });
 
 
+describe("BBC", function() {
+	it("Should return that the BBC homepage was the referrer", function() {
+		//arrange
+		let ref = "www.bbc.com";
+		//act
+		let obj = new Referrer(ref);
+		//assert
+		expect(obj.refferal.name).to.eql('homepage');
+	});
+
+	it("Should return the BBC CPSid of referrer", function() {
+		//arrange
+		let ref = "http://www.bbc.co.uk/news/business-37618618";
+		//act
+		let obj = new Referrer(ref);
+		//assert
+		expect(obj.refferal.page).to.eql('37618618');
+		expect(obj.refferal.name).to.eql('news');
+	});
+
+	it("Should return the BBC news homepage", function() {
+		//arrange
+		let ref = "http://www.bbc.co.uk/news/";
+		//act
+		let obj = new Referrer(ref);
+		//assert
+		expect(obj.refferal.page).to.eql('home');
+		expect(obj.refferal.name).to.eql('news');
+	});
+
+	it("Should return the BBC news business homepage", function() {
+		//arrange
+		let ref = "http://www.bbc.co.uk/news/business";
+		//act
+		let obj = new Referrer(ref);
+		//assert
+		expect(obj.refferal.page).to.eql('business');
+		expect(obj.refferal.name).to.eql('news');
+	});
+
+	it("Should return the BBC sport homepage", function() {
+		//arrange
+		let ref = "http://www.bbc.co.uk/sport";
+		//act
+		let obj = new Referrer(ref);
+		//assert
+		expect(obj.refferal.page).to.eql('home');
+		expect(obj.refferal.name).to.eql('sport');
+	});
+
+	it("Should return the BBC sport football homepage", function() {
+		//arrange
+		let ref = "http://www.bbc.co.uk/sport/football";
+		//act
+		let obj = new Referrer(ref);
+		//assert
+		expect(obj.refferal.page).to.eql('football');
+		expect(obj.refferal.name).to.eql('sport');
+	});
+
+	it("Should return the BBC sport with cps id", function() {
+		//arrange
+		let ref = "http://www.bbc.co.uk/sport/live/37157487";
+		//act
+		let obj = new Referrer(ref);
+		//assert
+		expect(obj.refferal.page).to.eql('37157487');
+		expect(obj.refferal.name).to.eql('sport');
+	});
+
+	it("Should return the BBC News Unknown Page", function() {
+		//arrange
+		let ref = "http://www.bbc.co.uk/news/resources/idt-6d083913-0bfb-4988-8cd8-d126fa6dcff1";
+		//act
+		let obj = new Referrer(ref);
+		//assert
+		expect(obj.refferal.page).to.eql('resources/idt-6d083913-0bfb-4988-8cd8-d126fa6dcff1');
+		expect(obj.refferal.name).to.eql('news');
+	});
+
+})
+

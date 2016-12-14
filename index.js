@@ -2,6 +2,7 @@
 
 // delete require.cache[require.resolve('./data/core.json')]
 const referrersMain		= require('./data/core.json');
+const referrersBBC 		= require('./data/referrers-bbc.json');
 const referrersNews 	= require('./data/referrers-news.json');
 const countries 		= require('./data/countries.json');
 const url 				= require('url');
@@ -10,6 +11,7 @@ const querystring 		= require('querystring');
 
 let referrers 			= referrersMain;
 referrers.news 			= referrersNews;
+referrers.bbc 			= referrersBBC;
 
 let Referer = function(ref) {
 
@@ -41,12 +43,14 @@ let Referer = function(ref) {
 		return;
 	}
 
-	res 		= this.puller(res, data);
+	res = this.puller(res, data);
+	res = this.internal(res, data);
 
-	if (res.type) { 	this.refferal.type 		= res.type }
-	if (res.name) { 	this.refferal.name 		= res.name }
-	if (res.search) { 	this.refferal.search 	= res.search }
-	if (data.host) { 	this.refferal.host 		= data.host }
+	if (res.type) 	{ 	this.refferal.type 		= res.type 		}
+	if (res.name) 	{ 	this.refferal.name 		= res.name 		}
+	if (res.search) { 	this.refferal.search 	= res.search 	}
+	if (data.host) 	{ 	this.refferal.host 		= data.host 	}
+	if (res.page) 	{ 	this.refferal.page 		= res.page 		}
 
 };
 
@@ -182,6 +186,47 @@ Referer.prototype.puller = function(result, data) {
 				}
 			} 
 		}
+	}
+
+	return result;
+};
+
+Referer.prototype.internal = function(result, data) {
+	//get site name 
+	if (!result || !result.type) {
+		console.log(result)
+	}
+
+	if (result.type === 'bbc') {
+		let page;
+		let patt = new RegExp(/\/(.*?)([\/|?|#|]|$)/);
+		let reg = patt.exec(data.path);
+
+		if (reg && reg[1].length > 0) {
+			result.name = reg[1];	
+		} else {
+			result.name = 'homepage';
+			return result;
+		}
+
+		let lengthOfSite = reg[0].length;
+		let patt2 = new RegExp(/\d{8}/);
+		let cps = patt2.exec(data.path);
+		if (cps === null) {
+			result.page = data.pathname.substr(lengthOfSite);
+			if (result.page.length === 0 ) {
+				result.page = 'home';
+			}
+			if (result.page.endsWith('/')) {
+				result.page = result.page.substring(0, result.page.length - 1);
+			}
+			result = this.puller(result, data);
+
+		} else {
+			result.page = cps[0]; 
+		}
+
+		return result;
 	}
 
 	return result;

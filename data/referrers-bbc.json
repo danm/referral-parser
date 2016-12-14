@@ -1,0 +1,17 @@
+{
+    "BBC": {
+      "urls" : [
+        "bbc.com",
+        "www.bbc.com",
+        "m.bbc.com",
+        "bbc.co.uk",
+        "www.bbc.co.uk",
+        "m.bbc.co.uk",
+        "bbci.co.uk",
+        "bbctvapps.co.uk"
+      ],
+      "params": [
+        "q"
+      ]
+    }
+}
