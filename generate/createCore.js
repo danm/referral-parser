@@ -154,6 +154,8 @@ const refactor = () => {
         };
     }
 
+    data.built = new Date();
+
     //Write to JSON File
     fs.writeFile(__dirname + '/../data/core.json', JSON.stringify(data));
     console.log('done');
