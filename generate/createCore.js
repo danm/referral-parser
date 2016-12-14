@@ -43,7 +43,7 @@ const getSocial = () => {
 const getOther = () => {
     return new Promise((fulfill, reject) => {
 
-        fs.readFile("../data/snowplow.yml", (err, data) => {
+        fs.readFile(__dirname + "/../data/snowplow.yml", (err, data) => {
             if (err) {
                 reject(err);
             } else {
@@ -155,7 +155,7 @@ const refactor = () => {
     }
 
     //Write to JSON File
-    fs.writeFile('../data/core.json', JSON.stringify(data));
+    fs.writeFile(__dirname + '/../data/core.json', JSON.stringify(data));
     console.log('done');
 
 
