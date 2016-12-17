@@ -118,14 +118,18 @@ const combine = () => {
             data.search[search] = otherJSON.search[search];
         }
     }
-
 };
+
 
 const refactor = () => {
 
     //remove 0 array from seach data to put at root
+
     for (let domain in data.search) {
-        //facebook shouldn't be in search'
+        //facebook shouldn't be in search' 
+        data.search[domain].urls = data.search[domain].domains;
+        delete data.search[domain].domains;
+
         if (domain !== 'Facebook') {
             data.search[domain] = data.search[domain][0];
         } else {
@@ -135,6 +139,10 @@ const refactor = () => {
 
     //add urls object to social
     for (let domain in data.social) {
+        if (!Array.isArray(data.social[domain])) {
+            data.social[domain] = data.social[domain].domains;
+        }
+
         data.social[domain] = {
             urls: data.social[domain]
         };
