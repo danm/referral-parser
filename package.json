@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "update": "node ./generate/createCore.js",
     "bump": "npm version patch -m 'version bump' && git push && npm publish"
   },
   "repository": {
