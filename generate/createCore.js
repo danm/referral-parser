@@ -42,7 +42,6 @@ const getSocial = () => {
 
 const getOther = () => {
     return new Promise((fulfill, reject) => {
-
         fs.readFile(__dirname + "/../data/snowplow.yml", (err, data) => {
             if (err) {
                 reject(err);
@@ -51,7 +50,6 @@ const getOther = () => {
                 fulfill();
             }
         });
-
         // request('https://raw.githubusercontent.com/snowplow/referer-parser/master/resources/referers.yml', (err, res, body) => {
         // 		if (err) {
         // 			reject(err)
@@ -165,7 +163,7 @@ const refactor = () => {
     data.built = new Date();
 
     //Write to JSON File
-    fs.writeFile(__dirname + '/../data/core.json', JSON.stringify(data));
+    fs.writeFileSync(__dirname + '/../data/core.json', JSON.stringify(data));
     console.log('done');
 
 
