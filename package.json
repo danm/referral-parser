@@ -1,6 +1,6 @@
 {
   "name": "referral-parser",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Parse a referral url into useful information",
   "main": "index.js",
   "scripts": {
