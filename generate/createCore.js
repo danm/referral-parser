@@ -42,22 +42,22 @@ const getSocial = () => {
 
 const getOther = () => {
     return new Promise((fulfill, reject) => {
-        fs.readFile(__dirname + "/../data/snowplow.yml", (err, data) => {
-            if (err) {
-                reject(err);
-            } else {
-                other = data.toString();
-                fulfill();
-            }
-        });
-        // request('https://raw.githubusercontent.com/snowplow/referer-parser/master/resources/referers.yml', (err, res, body) => {
-        // 		if (err) {
-        // 			reject(err)
-        // 		} else {
-        // 			other = body;
-        // 			fulfill();
-        // 		}
+        // fs.readFile(__dirname + "/../data/snowplow.yml", (err, data) => {
+        //     if (err) {
+        //         reject(err);
+        //     } else {
+        //         other = data.toString();
+        //         fulfill();
+        //     }
         // });
+        request('https://raw.githubusercontent.com/snowplow/referer-parser/master/resources/referers.yml', (err, res, body) => {
+        		if (err) {
+        			reject(err)
+        		} else {
+        			other = body;
+        			fulfill();
+        		}
+        });
     });
 };
 
