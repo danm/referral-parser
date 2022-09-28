@@ -1444,7 +1444,31 @@
             "urls": ["qzone.qq.com"]
         },
         "Pinterest": {
-            "urls": ["pinterest.com"]
+            "urls": [
+                "pinterest.at",
+                "pinterest.ca",
+                "pinterest.ch",
+                "pinterest.cl",
+                "pinterest.co.kr",
+                "pinterest.co.uk",
+                "pinterest.com",
+                "pinterest.com.au",
+                "pinterest.com.mx",
+                "pinterest.de",
+                "pinterest.dk",
+                "pinterest.es",
+                "pinterest.fr",
+                "pinterest.ie",
+                "pinterest.it",
+                "pinterest.jp",
+                "pinterest.net",
+                "pinterest.nz",
+                "pinterest.ph",
+                "pinterest.pt",
+                "pinterest.ru",
+                "pinterest.se",
+                "pinterestmail.com"
+            ]
         },
         "Plaxo": {
             "urls": ["plaxo.com"]
